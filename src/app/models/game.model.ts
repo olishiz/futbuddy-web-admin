@@ -4,4 +4,5 @@ export interface IGame {
     date: any;
     time: any;
     price: any;
+    status: any;
 }

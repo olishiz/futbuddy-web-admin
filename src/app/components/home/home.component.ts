@@ -3,7 +3,6 @@ import { IGame } from "../../models/game.model";
 import { BookService } from "../../services/book.service";
 import { GameService } from "../../services/game.service";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
-import { IBook } from "../../models/book.model";
 import { EditGamesComponent } from "../modal/edit-games/edit-games.component";
 import Swal from 'sweetalert2'
 
@@ -17,7 +16,6 @@ export class HomeComponent implements OnInit {
     games: IGame[] = [];
 
     constructor(
-        private bookService: BookService,
         private gameService: GameService,
         private modal: NgbModal) {
     }
@@ -40,10 +38,26 @@ export class HomeComponent implements OnInit {
         modalRef.componentInstance.id = game.id;
     }
 
-    deleteBook(book: IBook) {
-        if (confirm('Are you sure to delete this record ?') == true) {
-            this.bookService.deleteBook(book).then(() => console.log('delete successful'));
-        }
+    deleteGame(game: IGame) {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                this.gameService.deleteGame(game).then(() => {
+                    Swal.fire(
+                        'Deleted!',
+                        'Your game has been deleted.',
+                        'success'
+                    )
+                })
+            }
+        })
     }
 
     testSwal() {

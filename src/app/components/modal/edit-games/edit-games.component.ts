@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IGame } from "../../../models/game.model";
 import { NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
+import { IGame } from "../../../models/game.model";
 import { GameService } from "../../../services/game.service";
+import Swal from "sweetalert2";
 
 @Component({
     selector: 'app-edit-games',
@@ -19,7 +20,27 @@ export class EditGamesComponent implements OnInit {
     ) {
     }
 
-    ngOnInit(): void {
+    ngOnInit() {
+        if (this.id)
+            this.gameService.getGameById(this.id).subscribe((res) => {
+                this.game = res;
+            });
     }
 
+    onUpdate() {
+        if (this.game) {
+            this.gameService.updateGame(this.game).then(() => {
+                Swal.fire(
+                    'Game Updated!',
+                    'Your game has been updated to the record.',
+                    'success'
+                );
+                this.activeModal.close();
+            });
+        }
+    }
+
+    closeModal() {
+        this.activeModal.close()
+    }
 }

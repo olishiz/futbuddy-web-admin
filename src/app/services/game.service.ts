@@ -20,31 +20,29 @@ import { IGame } from "../models/game.model";
 })
 export class GameService {
 
-    gamesPath = "games"
-
     constructor(
         private firestore: Firestore,
         private afs: AngularFirestore) {
     }
 
     getGames(): Observable<IGame[]> {
-        const gamesRef = collection(this.firestore, this.gamesPath);
+        const gamesRef = collection(this.firestore, 'games');
         return collectionData(gamesRef, {idField: 'id'}) as Observable<IGame[]>;
     }
 
     addGame(game: IGame) {
-        const gamesRef = collection(this.firestore, this.gamesPath);
+        const gamesRef = collection(this.firestore, 'games');
         return addDoc(gamesRef, game);
     }
 
-    getBookByID(id: string) {
-        const bookRef = doc(this.firestore, `books/${id}`);
-        return docData(bookRef, {idField: 'id'}) as Observable<IBook>;
+    getGameById(id: string) {
+        const gamesRef = doc(this.firestore, `games/${id}`);
+        return docData(gamesRef, {idField: 'id'}) as Observable<IGame>;
     }
 
-    updateBook(book: IBook) {
-        const bookDocRef = doc(this.firestore, `books/${book.id}`);
-        return setDoc(bookDocRef, book);
+    updateGame(game: IGame) {
+        const gamesRef = doc(this.firestore, `games/${game.id}`);
+        return setDoc(gamesRef, game);
     }
 
     modifyBookPrice(book: IBook, amount: number) {
@@ -52,9 +50,9 @@ export class GameService {
         return updateDoc(bookDocRef, {price: amount});
     }
 
-    deleteBook(book: IBook) {
-        const bookDocRef = doc(this.firestore, `books/${book.id}`);
-        return deleteDoc(bookDocRef);
+    deleteGame(game: IGame) {
+        const gamesRef = doc(this.firestore, `games/${game.id}`);
+        return deleteDoc(gamesRef);
     }
 
     searchBook(name: string) {

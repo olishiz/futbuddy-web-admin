@@ -1,1 +1,58 @@
-<p>edit-games works!</p>
+<div *ngIf="game" class="container">
+    <form #gameForm="ngForm" (ngSubmit)="onUpdate()">
+
+        <!--   Modal header  -->
+        <div class="modal-header">
+            <h1 class="modal-title" id="modal-basic-title">Edit Game Record</h1>
+            <button type="button" class="btn-close" aria-label="Close" (click)="closeModal()"></button>
+        </div>
+
+        <!--   Modal body  -->
+        <div class="modal-body">
+            <div class="form-group">
+                <label>Location</label>
+                <input class="form-control" name="location" #nameCtrl="ngModel"
+                       [(ngModel)]="game.location" placeholder="Location Name" required>
+                <span class="fst-italic">Example format: Republic of Futsal, PJ</span>
+            </div>
+
+            <div class="form-group mt-2">
+                <label>Date</label>
+                <input class="form-control" name="date" #authorCtrl="ngModel"
+                       [(ngModel)]="game.date" placeholder="Date of game" required>
+                <span class="fst-italic">Example format: 26th August 2023, Saturday Night</span>
+            </div>
+
+            <div class="form-group mt-2">
+                <label>Time</label>
+                <input class="form-control" name="time" #authorCtrl="ngModel"
+                       [(ngModel)]="game.time" placeholder="Time of game" required>
+                <span class="fst-italic">Example format: 7.00pm-9.00pm</span>
+            </div>
+
+            <div class="form-group mt-2">
+                <label>Price</label>
+                <input class="form-control" name="price" #authorCtrl="ngModel"
+                       [(ngModel)]="game.price" placeholder="Price" required>
+                <span class="fst-italic">Example format: RM25</span>
+            </div>
+
+            <div class="form-group mt-2">
+                <label>Status</label>
+                <select class="form-select" name="status" #name="ngModel" [(ngModel)]="game.status">
+                    <option value="ACTIVE">Active</option>
+                    <option value="FINISHED">Finished</option>
+                </select>
+            </div>
+        </div>
+
+        <!--   Modal footer  -->
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-outline-success" [disabled]="!gameForm.valid">
+                Update Game
+            </button>
+        </div>
+
+
+    </form>
+</div>

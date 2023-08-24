@@ -1,16 +1,5 @@
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-md-4">
-            <app-book></app-book>
-        </div>
-        <div class="col-md-7">
-            <app-books></app-books>
-        </div>
-    </div>
-</div>
-
 <div class="container mt-5 text-center">
-    <h1>Table goes here!</h1>
+    <h1>Football Game Sessions</h1>
 
     <table class="table table-striped">
         <thead>
@@ -20,6 +9,7 @@
             <th scope="col">Date</th>
             <th scope="col">Time</th>
             <th scope="col">Price</th>
+            <th scope="col">Status</th>
 
             <th scope="col">Edit</th>
             <th scope="col">Delete</th>
@@ -27,19 +17,29 @@
         </thead>
         <tbody *ngIf="games">
         <tr *ngFor="let game of games; index as i">
-            <th scope="row">{{ i+1 }}</th>
+            <th scope="row">{{ i + 1 }}</th>
             <td>{{ game.location }}</td>
             <td>{{ game.date }}</td>
             <td>{{ game.time }}</td>
             <td>{{ game.price }}</td>
+            <td *ngIf="game.status == null">
+            </td>
+            <td *ngIf="game.status == 'ACTIVE'">
+                <span class="badge rounded-pill bg-success">Active</span>
+            </td>
+            <td *ngIf="game.status == 'FINISHED'">
+                <span class="badge text-bg-danger bg-danger">Finished</span>
+            </td>
             <td>
                 <i class="bi bi-pencil-square" style="color: green;" (click)="editModal(game)"></i>
             </td>
             <td>
-                <i class="bi bi-trash" (click)="testSwal()" style="color: red;"></i>
+                <i class="bi bi-trash" (click)="deleteGame(game)" style="color: red;"></i>
             </td>
         </tr>
         </tbody>
     </table>
+
+    <app-user></app-user>
 
 </div>

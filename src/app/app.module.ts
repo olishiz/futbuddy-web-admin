@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
-import { BookComponent } from './components/book/book.component';
 import { BooksComponent } from './components/books/books.component';
 import { HomeComponent } from './components/home/home.component';
 import { EditBookComponent } from './components/modal/edit-book/edit-book.component';
@@ -20,18 +19,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from "@angular/material/table";
 import { EditGamesComponent } from './components/modal/edit-games/edit-games.component';
 import { AddGamesComponent } from './components/add-games/add-games.component';
+import { UserComponent } from './components/user/user.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         AppComponent,
         BooksComponent,
-        BookComponent,
         HomeComponent,
         EditBookComponent,
         SearchComponent,
         EditGamesComponent,
         AddGamesComponent,
+        UserComponent,
     ],
     imports: [
         BrowserModule,

@@ -1,12 +1,13 @@
 export const environment = {
-  firebase: {
-    projectId: 'book-834db',
-    appId: '1:759691285797:web:30a3c6bf6d8fca5837b6cc',
-    storageBucket: 'book-834db.appspot.com',
-    locationId: 'us-central',
-    apiKey: 'AIzaSyC-RrUxFbND-dVu5NwGT-Mi0CX--jSe9ys',
-    authDomain: 'book-834db.firebaseapp.com',
-    messagingSenderId: '759691285797',
-  },
-  production: true
+    firebase: {
+        projectId: 'futbuddy-kl',
+        appId: '1:1000652290768:web:56f449111d029dad693cd5',
+        databaseURL: 'https://futbuddy-kl-default-rtdb.asia-southeast1.firebasedatabase.app',
+        storageBucket: 'futbuddy-kl.appspot.com',
+        apiKey: 'AIzaSyC890rC1x9d06eAWWDxJoJQE-ZkbaIjl50',
+        authDomain: 'futbuddy-kl.firebaseapp.com',
+        messagingSenderId: '1000652290768',
+        measurementId: 'G-18WTJD6DVS',
+    },
+    production: true
 };

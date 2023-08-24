@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mt-5">
     <div class="row">
         <div class="col-md-4">
             <app-book></app-book>
@@ -7,4 +7,39 @@
             <app-books></app-books>
         </div>
     </div>
+</div>
+
+<div class="container mt-5 text-center">
+    <h1>Table goes here!</h1>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Location</th>
+            <th scope="col">Date</th>
+            <th scope="col">Time</th>
+            <th scope="col">Price</th>
+
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+        </tr>
+        </thead>
+        <tbody *ngIf="games">
+        <tr *ngFor="let game of games; index as i">
+            <th scope="row">{{ i+1 }}</th>
+            <td>{{ game.location }}</td>
+            <td>{{ game.date }}</td>
+            <td>{{ game.time }}</td>
+            <td>{{ game.price }}</td>
+            <td>
+                <i class="bi bi-pencil-square" style="color: green;" (click)="editModal(game)"></i>
+            </td>
+            <td>
+                <i class="bi bi-trash" (click)="testSwal()" style="color: red;"></i>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
 </div>

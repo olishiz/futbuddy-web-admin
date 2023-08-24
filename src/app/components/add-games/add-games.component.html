@@ -1,0 +1,49 @@
+<div class="center">
+    <h1>Add new game record</h1>
+</div>
+
+<div class="center">
+
+    <form #gameForm="ngForm" (ngSubmit)="onSubmitGame(gameForm)">
+
+        <div class="form-group">
+            <label>Location</label>
+            <input class="form-control" name="location" #name="ngModel" [(ngModel)]="game.location"
+                   placeholder="Location Name"
+                   required>
+            <span class="fst-italic">Example format: Republic of Futsal, PJ</span>
+        </div>
+
+        <div class="form-group mt-2">
+            <label>Date</label>
+            <input class="form-control" name="date" #name="ngModel" [(ngModel)]="game.date"
+                   placeholder="Date of game"
+                   required>
+            <span class="fst-italic">Example format: 26th August 2023, Saturday Night</span>
+        </div>
+
+        <div class="form-group mt-2">
+            <label>Time</label>
+            <input class="form-control" name="time" #name="ngModel" [(ngModel)]="game.time"
+                   placeholder="Time of game"
+                   required>
+            <span class="fst-italic">Example format: 7.00pm-9.00pm</span>
+        </div>
+
+        <div class="form-group mt-2">
+            <label>Price</label>
+            <input class="form-control" name="price" #name="ngModel" [(ngModel)]="game.price"
+                   placeholder="Price"
+                   required>
+            <span class="fst-italic">Example format: RM25</span>
+        </div>
+
+
+        <div class="form-group float-right">
+            <button type="submit" class="btn btn-success" [disabled]="!gameForm.valid" [disabled]="gameForm.invalid">
+                <i class="bi bi-plus"></i>Add Game
+            </button>
+        </div>
+
+    </form>
+</div>

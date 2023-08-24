@@ -1,9 +1,13 @@
-<div class="jumbotron">
-  <h2 style="text-align:center;">
-    Book Collection
-  </h2>
-  <button type="button" routerLink="search" class="btn btn-link float-right">Search</button>
-  <button type="button" routerLink="" class="btn btn-link float-right">Home</button>
-</div>
+<nav class="navbar navbar-expand navbar-dark bg-dark flex-column">
+  <a class="navbar-brand">FutBuddy Web Admin</a>
+  <div class="navbar-nav mr-auto">
+    <li class="nav-item">
+      <a routerLink="home" class="nav-link">Home</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="add-games" class="nav-link">Add</a>
+    </li>
+  </div>
+</nav>
 
 <router-outlet></router-outlet>

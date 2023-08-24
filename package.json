@@ -1,23 +1,28 @@
 {
   "name": "FutBuddy Web Admin",
+  "version": "1.0.0",
+  "license": "MIT",
   "description": "A really cool app",
   "engines": {
-    "node": "16.17.1"
+    "node": "16.17.1",
+    "npm": "8.15.0"
   },
-  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "heroku-postbuild": "ng build"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "~13.3.1",
     "@angular/cdk": "^13.3.9",
+    "@angular/cli": "~13.3.1",
     "@angular/common": "~13.3.1",
     "@angular/compiler": "~13.3.1",
+    "@angular/compiler-cli": "~13.3.1",
     "@angular/core": "~13.3.1",
     "@angular/fire": "^7.3.0",
     "@angular/forms": "~13.3.1",
@@ -28,9 +33,12 @@
     "@ng-bootstrap/ng-bootstrap": "^12.0.1",
     "bootstrap": "^5.1.3",
     "bootstrap-icons": "^1.8.1",
+    "express": "^4.18.2",
+    "path": "^0.12.7",
     "rxjs": "~7.5.0",
     "sweetalert2": "^11.7.27",
     "tslib": "^2.3.0",
+    "typescript": "~4.5.2",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
@@ -40,6 +48,7 @@
     "@angular/localize": "^13.3.1",
     "@types/jasmine": "~3.10.0",
     "@types/node": "^12.11.1",
+    "enhanced-resolve": "^3.3.0",
     "jasmine-core": "~4.0.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",

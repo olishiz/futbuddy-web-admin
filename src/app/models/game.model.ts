@@ -5,4 +5,5 @@ export interface IGame {
     time: any;
     price: any;
     status: any;
+    numOfPlayers: any;
 }

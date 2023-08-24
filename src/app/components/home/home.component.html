@@ -9,6 +9,7 @@
             <th scope="col">Date</th>
             <th scope="col">Time</th>
             <th scope="col">Price</th>
+            <th scope="col">Num Of Players</th>
             <th scope="col">Status</th>
 
             <th scope="col">Edit</th>
@@ -22,6 +23,7 @@
             <td>{{ game.date }}</td>
             <td>{{ game.time }}</td>
             <td>{{ game.price }}</td>
+            <td>{{ game.numOfPlayers }}</td>
             <td *ngIf="game.status == null">
             </td>
             <td *ngIf="game.status == 'ACTIVE'">

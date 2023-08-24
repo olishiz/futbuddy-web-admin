@@ -1,5 +1,9 @@
 {
   "name": "FutBuddy Web Admin",
+  "description": "A really cool app",
+  "engines": {
+    "node": "16.17.1"
+  },
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",

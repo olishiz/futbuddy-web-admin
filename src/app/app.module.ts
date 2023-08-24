@@ -6,9 +6,7 @@ import { AppComponent } from './app.component';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
-import { BooksComponent } from './components/books/books.component';
 import { HomeComponent } from './components/home/home.component';
-import { EditBookComponent } from './components/modal/edit-book/edit-book.component';
 import { SearchComponent } from './components/search/search.component';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -25,9 +23,7 @@ import { UserComponent } from './components/user/user.component';
     declarations: [
         AppComponent,
         AppComponent,
-        BooksComponent,
         HomeComponent,
-        EditBookComponent,
         SearchComponent,
         EditGamesComponent,
         AddGamesComponent,

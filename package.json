@@ -1,5 +1,5 @@
 {
-  "name": "FutBuddy Web Admin",
+  "name": "futbuddy-web",
   "version": "1.0.0",
   "license": "MIT",
   "description": "A really cool app",
@@ -13,7 +13,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "heroku-postbuild": "ng build"
+    "heroku-postbuild": "ng build -prod"
   },
   "private": true,
   "dependencies": {

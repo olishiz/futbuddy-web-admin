@@ -1,7 +1,7 @@
 {
   "hosting": {
     "target": "fireApps",
-    "public": "dist/fire-apps",
+    "public": "dist/futbuddy-web",
     "ignore": [
       "**/.*"
     ],

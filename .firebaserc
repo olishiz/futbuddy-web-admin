@@ -1,14 +1,14 @@
 {
   "targets": {
-    "book-834db": {
+    "futbuddy-kl": {
       "hosting": {
-        "fireApps": [
-          "book-834db"
+        "app": [
+          "futbuddy-kl"
         ]
       }
     }
   },
   "projects": {
-    "default": "book-834db"
+    "default": "futbuddy-kl"
   }
 }

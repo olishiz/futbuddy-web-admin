@@ -12,9 +12,18 @@ import { Router } from "@angular/router";
 })
 export class AddGamesComponent implements OnInit {
 
-    game: IGame = {name: '', location: '', price: '', date: '', time: '', status: '', numOfPlayers: ''}
-
-    date: { year: number; month: number };
+    game: IGame = {
+        name: '',
+        location: '',
+        price: '',
+        date: '',
+        time: '',
+        status: '',
+        numOfPlayers: '',
+        arenaPhotoUrl: '',
+        formatType: '',
+        floorType: ''
+    }
 
     constructor(
         private gameService: GameService,

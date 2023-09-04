@@ -7,4 +7,7 @@ export interface IGame {
     price: any;
     status: any;
     numOfPlayers: any;
+    arenaPhotoUrl: any;
+    formatType: any;
+    floorType: any;
 }

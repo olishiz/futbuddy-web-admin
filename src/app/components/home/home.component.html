@@ -11,6 +11,9 @@
             <th scope="col">Time</th>
             <th scope="col">Price</th>
             <th scope="col">Num Of Players</th>
+            <th scope="col">Arena Photo URL</th>
+            <th scope="col">Format Type</th>
+            <th scope="col">Floor Type</th>
             <th scope="col">Status</th>
 
             <th scope="col">Edit</th>
@@ -26,8 +29,11 @@
             <td>{{ game.time }}</td>
             <td>{{ game.price }}</td>
             <td>{{ game.numOfPlayers }}</td>
-            <td *ngIf="game.status == null">
-            </td>
+
+            <td><a *ngIf="game.arenaPhotoUrl" href="{{ game.arenaPhotoUrl }}" target="_blank">link</a></td>
+            <td>{{ game.formatType }}</td>
+            <td>{{ game.floorType }}</td>
+            <td *ngIf="game.status == null"></td>
             <td *ngIf="game.status == 'ACTIVE'">
                 <span class="badge rounded-pill bg-success">Active</span>
             </td>

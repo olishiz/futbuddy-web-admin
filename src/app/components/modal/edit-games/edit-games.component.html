@@ -12,46 +12,61 @@
 
             <div class="form-group">
                 <label>Name</label>
-                <input class="form-control" name="name" #nameCtrl="ngModel"
-                       [(ngModel)]="game.name" placeholder="Session Name" required>
+                <input class="form-control" name="name" [(ngModel)]="game.name" placeholder="Session Name" required>
                 <span class="fst-italic">Example format: FutBuddy Game #1</span>
             </div>
 
-
             <div class="form-group mt-2">
                 <label>Location</label>
-                <input class="form-control" name="location" #nameCtrl="ngModel"
-                       [(ngModel)]="game.location" placeholder="Location Name" required>
+                <input class="form-control" name="location" [(ngModel)]="game.location" placeholder="Location Name"
+                       required>
                 <span class="fst-italic">Example format: Republic of Futsal, PJ</span>
             </div>
 
             <div class="form-group mt-2">
                 <label>Date</label>
-                <input class="form-control" name="date" #authorCtrl="ngModel"
-                       [(ngModel)]="game.date" placeholder="Date of game" required>
+                <input class="form-control" name="date" [(ngModel)]="game.date" placeholder="Date of game" required>
                 <span class="fst-italic">Example format: 26th August 2023, Saturday Night</span>
             </div>
 
             <div class="form-group mt-2">
                 <label>Time</label>
-                <input class="form-control" name="time" #authorCtrl="ngModel"
-                       [(ngModel)]="game.time" placeholder="Time of game" required>
+                <input class="form-control" name="time" [(ngModel)]="game.time" placeholder="Time of game" required>
                 <span class="fst-italic">Example format: 7.00pm-9.00pm</span>
             </div>
 
             <div class="form-group mt-2">
                 <label>Price</label>
-                <input class="form-control" name="price" #authorCtrl="ngModel"
-                       [(ngModel)]="game.price" placeholder="Price" required>
+                <input class="form-control" name="price" [(ngModel)]="game.price" placeholder="Price" required>
                 <span class="fst-italic">Example format: RM25</span>
             </div>
 
             <div class="form-group mt-2">
                 <label>Number Of Players</label>
-                <input class="form-control" name="numOfPlayers" #name="ngModel" [(ngModel)]="game.numOfPlayers"
-                       placeholder="Number Of Players"
-                       required>
+                <input class="form-control" name="numOfPlayers" [(ngModel)]="game.numOfPlayers"
+                       placeholder="Number Of Players" required>
                 <span class="fst-italic">Example format: 15</span>
+            </div>
+
+            <div class="form-group mt-2">
+                <label>Arena Photo URL</label>
+                <input class="form-control" name="arenaPhotoUrl" [(ngModel)]="game.arenaPhotoUrl"
+                       placeholder="Arena Photo Url" required>
+                <span class="fst-italic">Example format: https://image.url.com</span>
+            </div>
+
+            <div class="form-group mt-2">
+                <label>Format Type</label>
+                <input class="form-control" name="formatType" [(ngModel)]="game.formatType" placeholder="Format Type"
+                       required>
+                <span class="fst-italic">Example format: 5v5</span>
+            </div>
+
+            <div class="form-group mt-2">
+                <label>Floor Type</label>
+                <input class="form-control" name="floorType" [(ngModel)]="game.floorType" placeholder="Floor Type"
+                       required>
+                <span class="fst-italic">Example format: Futsal Tiles / Turf</span>
             </div>
 
             <div class="form-group mt-2">
@@ -69,7 +84,6 @@
                 Update Game
             </button>
         </div>
-
 
     </form>
 </div>

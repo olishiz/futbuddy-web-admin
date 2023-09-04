@@ -55,6 +55,27 @@
         </div>
 
         <div class="form-group mt-2">
+            <label>Arena Photo URL</label>
+            <input class="form-control" name="arenaPhotoUrl" #name="ngModel" [(ngModel)]="game.arenaPhotoUrl"
+                   placeholder="Arena Photo URL" required>
+            <span class="fst-italic">Example format: https://image.url.com</span>
+        </div>
+
+        <div class="form-group mt-2">
+            <label>Format Type:</label>
+            <input class="form-control" name="formatType" #name="ngModel" [(ngModel)]="game.formatType"
+                   placeholder="Format Type" required>
+            <span class="fst-italic">Example format: 5v5</span>
+        </div>
+
+        <div class="form-group mt-2">
+            <label>Floor Type:</label>
+            <input class="form-control" name="floorType" #name="ngModel" [(ngModel)]="game.floorType"
+                   placeholder="Floor Type" required>
+            <span class="fst-italic">Example format: Futsal Tiles / Turf</span>
+        </div>
+
+        <div class="form-group mt-2">
             <label>Status</label>
             <select class="form-select" name="status" #name="ngModel" [(ngModel)]="game.status">
                 <option value="ACTIVE">Active</option>

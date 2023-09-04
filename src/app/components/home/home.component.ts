@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { IGame } from "../../models/game.model";
-import { BookService } from "../../services/book.service";
 import { GameService } from "../../services/game.service";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { EditGamesComponent } from "../modal/edit-games/edit-games.component";
 import Swal from 'sweetalert2'
+
 
 @Component({
     selector: 'app-home',

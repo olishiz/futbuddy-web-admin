@@ -18,6 +18,7 @@ import { MatTableModule } from "@angular/material/table";
 import { EditGamesComponent } from './components/modal/edit-games/edit-games.component';
 import { AddGamesComponent } from './components/add-games/add-games.component';
 import { UserComponent } from './components/user/user.component';
+import { ViewGameDetailComponent } from './components/view-game-detail/view-game-detail.component';
 
 @NgModule({
     declarations: [
@@ -28,6 +29,7 @@ import { UserComponent } from './components/user/user.component';
         EditGamesComponent,
         AddGamesComponent,
         UserComponent,
+        ViewGameDetailComponent,
     ],
     imports: [
         BrowserModule,

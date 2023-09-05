@@ -35,7 +35,7 @@ export class GameService {
         return addDoc(gamesRef, game);
     }
 
-    getGameById(id: string) {
+    getGameById(id: any) {
         const gamesRef = doc(this.firestore, `games/${id}`);
         return docData(gamesRef, {idField: 'id'}) as Observable<IGame>;
     }
@@ -59,4 +59,10 @@ export class GameService {
         return this.afs.collection('books', ref =>
             ref.where('name', '==', name)).valueChanges({idField: 'id'});
     }
+
+    getPlayerListByGameId(id: any) {
+        const playerListRef = this.afs.collection('games').doc(id).collection('playerList');
+        return playerListRef.valueChanges();
+    }
+
 }

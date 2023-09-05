@@ -18,6 +18,7 @@
 
             <th scope="col">Edit</th>
             <th scope="col">Delete</th>
+            <th scope="col">View Detail</th>
         </tr>
         </thead>
         <tbody *ngIf="games">
@@ -29,8 +30,9 @@
             <td>{{ game.time }}</td>
             <td>{{ game.price }}</td>
             <td>{{ game.numOfPlayers }}</td>
-
-            <td><a *ngIf="game.arenaPhotoUrl" href="{{ game.arenaPhotoUrl }}" target="_blank">link</a></td>
+            <td>
+                <a *ngIf="game.arenaPhotoUrl" href="{{ game.arenaPhotoUrl }}" target="_blank">link</a>
+            </td>
             <td>{{ game.formatType }}</td>
             <td>{{ game.floorType }}</td>
             <td *ngIf="game.status == null"></td>
@@ -45,6 +47,9 @@
             </td>
             <td>
                 <i class="bi bi-trash" (click)="deleteGame(game)" style="color: red;"></i>
+            </td>
+            <td>
+                <button class="badge rounded-pill bg-warning" (click)="viewGame(game)">View</button>
             </td>
         </tr>
         </tbody>

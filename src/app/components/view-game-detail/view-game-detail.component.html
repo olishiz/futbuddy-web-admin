@@ -1,0 +1,38 @@
+<br>
+<!-- Back Button -->
+<button (click)="goToHome()" class="back-button" style="margin-left: 20px">Back to Home</button>
+
+<div class="game-details-container" *ngIf="game">
+    <h2>Game Name: {{ game!!.name }}</h2>
+    <p><strong>Location:</strong> {{ game!!.location }}</p>
+    <p><strong>Date:</strong> {{ game!!.date }}</p>
+    <p><strong>Time:</strong> {{ game!!.time }}</p>
+    <p><strong>Price:</strong> {{ game!!.price }}</p>
+    <p><strong>Status:</strong> {{ game!!.status }}</p>
+    <p><strong>Number of Players:</strong> {{ game!!.numOfPlayers }}</p>
+    <p><strong>Format Type:</strong> {{ game!!.formatType }}</p>
+    <p><strong>Floor Type:</strong> {{ game!!.floorType }}</p>
+    <div class="arena-photo">
+        <p><strong>Image of the URL:</strong></p>
+        <img src="{{ game!!.arenaPhotoUrl }}" alt="Arena Photo">
+    </div>
+
+    <hr>
+
+    <div class="player-list">
+        <h3>Player List</h3>
+        <ul>
+            <li *ngFor="let player of playerList; index as i">
+                <div class="player-name">{{ i + 1 }}. {{ player.playerName }}</div>
+                <div *ngIf="player.paymentStatus == 'UNPAID'">
+                    Status: <span class="badge text-bg-danger bg-danger">Unpaid</span>
+                </div>
+                <div *ngIf="player.paymentStatus == 'PAID'">
+                    Status: <span class="badge rounded-pill bg-success">Paid</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+</div>

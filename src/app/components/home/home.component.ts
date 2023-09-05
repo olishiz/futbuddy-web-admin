@@ -4,6 +4,7 @@ import { GameService } from "../../services/game.service";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { EditGamesComponent } from "../modal/edit-games/edit-games.component";
 import Swal from 'sweetalert2'
+import { Router } from "@angular/router";
 
 
 @Component({
@@ -17,7 +18,9 @@ export class HomeComponent implements OnInit {
 
     constructor(
         private gameService: GameService,
-        private modal: NgbModal) {
+        private modal: NgbModal,
+        private router: Router
+    ) {
     }
 
     ngOnInit() {
@@ -58,6 +61,12 @@ export class HomeComponent implements OnInit {
                 })
             }
         })
+    }
+
+    async viewGame(game: IGame) {
+        console.log('the game', game)
+        await this.router.navigate(['/view-game-detail', game.id]);
+
     }
 
     testSwal() {

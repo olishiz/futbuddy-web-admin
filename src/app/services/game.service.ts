@@ -52,6 +52,16 @@ export class GameService {
 
     deleteGame(game: IGame) {
         const gamesRef = doc(this.firestore, `games/${game.id}`);
+
+
+
+        // Delete games and the collection inside the document
+
+
+
+
+
+
         return deleteDoc(gamesRef);
     }
 

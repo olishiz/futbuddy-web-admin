@@ -8,6 +8,8 @@
             <th scope="col">Name</th>
             <th scope="col">Email</th>
             <th scope="col">Password</th>
+            <th scope="col">UID</th>
+<!--            <th scope="col">Delete</th>-->
         </tr>
         </thead>
         <tbody *ngIf="users">
@@ -16,6 +18,10 @@
             <td>{{ user.name }}</td>
             <td>{{ user.email }}</td>
             <td>{{ user.password }}</td>
+            <td>{{ user.uid }}</td>
+<!--            <td>-->
+<!--                <i class="bi bi-trash" (click)="deleteUser(user)" style="color: red;"></i>-->
+<!--            </td>-->
         </tr>
         </tbody>
     </table>
